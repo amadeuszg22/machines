@@ -15,5 +15,7 @@ echo "System copy keys"
 sudo rsync -artvpolz /home/pi/machines/root/.ssh/ /root/.ssh/
 sudo chmod a-rwx ~/.ssh/id_rsa
 sudo chmod u+rw ~/.ssh/id_rsa
-sudo "Network Configuration"
+echo "Network Configuration"
 sudo rsync -artvpolz /home/pi/machines/etc/ /etc/
+echo "installing backup"
+sudo apt-get install backup2l -y
