@@ -19,3 +19,8 @@ echo "Network Configuration"
 sudo rsync -artvpolz /home/pi/machines/etc/ /etc/
 echo "installing backup"
 sudo apt-get install backup2l -y
+echo "system install NFS"
+sudo apt-get install nfs-kernel-server nfs-common portmap
+sudo mkdir /home/pi/stor
+sudo echo "192.168.0.16:/volume1/machines/ /home/pi/stor/ nfs rsize=8192,wsize=8192,timeo=14,intr">>/etc/fstab
+sudo reboot
